@@ -1,15 +1,20 @@
 from selenium.webdriver.common.by import By
 
 
-class BasePageLocators():
-    # скрыть левое меню
-    # Сменить локализацию
-    # Сменить тему
-    USER_ICON = (By.XPATH, "//zps-platform-button[@zpsiconclass='account-circle']")  # Иконка юзера
+class MainPageLocators():
+    BODY = (By.XPATH, "//body[1]")
+    LOGO = (By.XPATH, "//img[@class='img-container']")
+    HIDE_LEFT_MENU_BUTTON = (By.XPATH, "//zps-platform-button[@zpsiconclass='editor-format-indent-decrease']")  # скрыть левое меню
+    SWITCH_LOCALIZATION_BUTTON = (By.XPATH, "//zps-platform-button[@elementclass='app-icon'][2]")  # Сменить локализацию
+    SWITCH_THEME_BUTTON = (By.XPATH, "//zps-platform-button[@elementclass='app-icon'][1]")  # Сменить тему
+    USER_ICON_BUTTON = (By.XPATH, "//zps-platform-button[@zpsiconclass='account-circle']")  # Иконка юзера
 
     LEFT_MENU = (By.TAG_NAME, "zps-applications-panel")  # левое меню
     Z_QA_LINK = (By.XPATH, "//h4[text()='Quality Assurance']")  # ЛИМС
 
+
+class ZQAPageLocators():
+    pass
     # Задания
     # НСИ
     # Шаблоны обоазцов

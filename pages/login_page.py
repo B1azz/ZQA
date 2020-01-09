@@ -13,6 +13,9 @@ class LoginPage(BasePage):
         assert  self.is_element_present(*LoginPageLocators.LOGIN_BUTTON), \
             "No login button"
 
-
     def login_to_system(self, username, password):
-        pass
+        self.should_be_login_page()
+        self.input_text(*LoginPageLocators.LOGIN_USERNAME_INPUT, username)
+        self.input_text(*LoginPageLocators.LOGIN_PASSWORD_INPUT, password)
+        self.click_button(*LoginPageLocators.LOGIN_BUTTON)
+

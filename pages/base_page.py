@@ -2,7 +2,6 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import NoSuchElementException, TimeoutException
 from selenium.common.exceptions import NoAlertPresentException
 from selenium.webdriver.support.wait import WebDriverWait
-from .locators import BasePageLocators
 
 
 class BasePage():
@@ -51,3 +50,8 @@ class BasePage():
     def hover_to_element(self, how, what):
         element = self.browser.find_element(how, what)
         element.hover()
+
+    def get_attribute(self, how, what, attribute):
+        element = self.browser.find_element(how, what)
+        value = element.get_attribute(attribute)
+        return value
